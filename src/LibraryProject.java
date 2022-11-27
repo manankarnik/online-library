@@ -315,14 +315,14 @@ public class LibraryProject {
                     welcomeLabel.setText(welcomeLabel.getText() + p.getProperty(usernameOrEmail + "->FirstName") + " " + p.getProperty(usernameOrEmail + "->LastName") + "!");
                     if (p.getProperty(usernameOrEmail + "->Gender").equals("Male")) {
                         try {
-                            profileLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/images/maleProfile.png"))));
+                            profileLabel.setIcon(new ImageIcon(ImageIO.read(LibraryProject.class.getResourceAsStream("images/maleProfile.png"))));
                         } catch (IOException ex) {
                             ex.printStackTrace();
                             throw new RuntimeException(ex);
                         }
                     } else {
                         try {
-                            profileLabel.setIcon(new ImageIcon(ImageIO.read(new File("src/images/femaleProfile.png"))));
+                            profileLabel.setIcon(new ImageIcon(ImageIO.read(LibraryProject.class.getResourceAsStream("images/femaleProfile.png"))));
 
                         } catch (IOException ex) {
                             ex.printStackTrace();
@@ -535,7 +535,7 @@ public class LibraryProject {
         }
 
         try {
-            final Image backgroundImage = ImageIO.read(new File("src/images/background.jpg"));
+            final Image backgroundImage = ImageIO.read(LibraryProject.class.getResourceAsStream("images/background.jpg"));
             frame.setContentPane(new JPanel(new BorderLayout()) {
                 @Override public void paintComponent(Graphics g) {
                     g.drawImage(backgroundImage, 0, 0, null);
